@@ -1,12 +1,27 @@
-# Keystone Project Starter
+# Project
 
-Welcome to Keystone!
+## Some prerequisite
+1. Setup account in https://supabase.io/
+2. Knowledge of Reactjs
 
-Run
+## Structure of this demo
+1. Build backend API with Headless CMS (keystonejs)
+2. Build client web app with next.js, prisma and apollo client
 
+## Setup backend API project
+
+Run in terminal
 ```
-yarn dev
+npx create-keystone-app
 ```
+
+Give name to project.
+```
+propel-demo-app
+```
+
+
+
 
 To view the config for your new app, look at [./keystone.ts](./keystone.ts)
 
