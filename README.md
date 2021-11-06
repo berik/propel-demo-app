@@ -2,7 +2,8 @@
 
 ## Some prerequisite
 1. Setup account in https://supabase.io/
-2. Knowledge of Reactjs
+2. Knowledge of Reactjs, GraphQL
+3. Installed VS code
 
 ## Structure of this demo
 1. Build backend API with Headless CMS (keystonejs)
@@ -19,42 +20,43 @@ Give name to project.
 ```
 propel-demo-app
 ```
+![Screen Shot 2021-11-06 at 10 06 35 am](https://user-images.githubusercontent.com/1040210/140590810-9324c0a7-3bca-4ac0-b601-38360f0f6ee4.png)
 
-
-
-
-To view the config for your new app, look at [./keystone.ts](./keystone.ts)
-
-This project starter is designed to give you a sense of the power Keystone can offer you, and show off some of its main features. It's also a pretty simple setup if you want to build out from it.
-
-We recommend you use this alongside our [getting started walkthrough](https://keystonejs.com/docs/walkthroughs/getting-started-with-create-keystone-app) which will walk you through what you get as part of this starter.
-
-If you want an overview of all the features Keystone offers, check out our [features](https://keystonejs.com/why-keystone#features) page.
-
-## Some Quick Notes On Getting Started
-
-### Changing the database
-
-We've set you up with an [SQLite database](https://keystonejs.com/docs/apis/config#sqlite) for ease-of-use. If you're wanting to use PostgreSQL, you can!
-
-Just change the `db` property on line 16 of the Keystone file [./keystone.ts](./keystone.ts) to
-
-```typescript
-db: {
-    provider: 'postgresql',
-    url: process.env.DATABASE_URL || 'DATABASE_URL_TO_REPLACE',
-}
+Run
+```
+cd propel-demo-app && code .
 ```
 
-And provide your database url from PostgreSQL.
+## Upgrade DB settings to postgresql
+1. Go to https://supabase.io/ and create a new project
+![Screen Shot 2021-11-06 at 11 10 50 am](https://user-images.githubusercontent.com/1040210/140590993-b9096d2a-a847-482b-b3f6-e6eccba67a42.png)
+2. Go to Settings page, click Database and copy `connectionString`. 
+3. Rename `postgresql` to `postgres` at the start of connection string, and replace `[YOUR-PASSWORD]` to your password. 
+4. End result should be: `postgresql://postgres:PropelDemoAppDb@db.akerbvropljqboyamhou.supabase.co:5432/postgres`
+5. Go back to project settings and find `keystone.js` file and modify connection string
 
-For more on database configuration, check out or [DB API Docs](https://keystonejs.com/docs/apis/config#db)
+```
+db: {
+    provider: 'postgresql',
+    url: 'postgresql://postgres:PropelDemoAppDb@db.akerbvropljqboyamhou.supabase.co:5432/postgres',
+    onConnect: async context => { /* ... */ },
+    // Optional advanced configuration
+    enableLogging: true,
+    useMigrations: true,
+    idField: { kind: 'uuid' },
+  },
+```
+6. Run `npm run dev` or `yarn dev`
+7. Name migration `init migration`
+    ![Screen Shot 2021-11-06 at 11 24 25 am](https://user-images.githubusercontent.com/1040210/140591398-18ddc930-9321-4ee5-a77f-471c6e356c6a.png)
 
-### Auth
+## Open Keystone.js
+1. Open URL: `http://localhost:3000/` 
+2. Setup Admin account in CMS. Password `PropelDemo`
+![Screen Shot 2021-11-06 at 11 30 04 am](https://user-images.githubusercontent.com/1040210/140591573-1a2c5f43-5390-43c5-ab2f-1421d6165f18.png)
+3. Create first post.
+![Screen Shot 2021-11-06 at 11 34 00 am](https://user-images.githubusercontent.com/1040210/140591712-0b166ff8-a48b-4f7b-9ff8-02f366fe1256.png)
 
-We've put auth into its own file to make this humble starter easier to navigate. To explore it without auth turned on, comment out the `isAccessAllowed` on line 21 of the Keystone file [./keystone.ts](./keystone.ts).
-
-For more on auth, check out our [Authentication API Docs](https://keystonejs.com/docs/apis/auth#authentication-api)
 
 ### Adding a frontend
 
