@@ -19,8 +19,13 @@ export default withAuth(
   config({
     // the db sets the database provider - we're using sqlite for the fastest startup experience
     db: {
-      provider: 'sqlite',
-      url: 'file:./keystone.db',
+      provider: 'postgresql',
+      url: 'postgresql://postgres:PropelDemoAppDb@db.akerbvropljqboyamhou.supabase.co:5432/postgres',
+      onConnect: async context => { /* ... */ },
+      // Optional advanced configuration
+      enableLogging: true,
+      useMigrations: true,
+      idField: { kind: 'uuid' },
     },
     // This config allows us to set up features of the Admin UI https://keystonejs.com/docs/apis/config#ui
     ui: {
