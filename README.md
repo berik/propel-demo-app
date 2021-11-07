@@ -1,7 +1,7 @@
 # Project
 
 ## Some prerequisite
-1. Setup account in https://supabase.io/
+1. Postgresql with username and password
 2. Knowledge of Reactjs and little bit of GraphQL
 3. Installed VSCode, yarn
 
@@ -28,11 +28,9 @@ cd propel-demo-app && code .
 ```
 
 ## Upgrade DB settings to postgresql
-1. Go to https://supabase.io/ and create a new project
-![Screen Shot 2021-11-06 at 11 10 50 am](https://user-images.githubusercontent.com/1040210/140590993-b9096d2a-a847-482b-b3f6-e6eccba67a42.png)
-2. Go to Settings page, click Database and copy `connectionString`. 
-3. Replace `[YOUR-PASSWORD]` to your password. 
-4. End result should be: `postgresql://postgres:PropelDemoAppDb@db.akerbvropljqboyamhou.supabase.co:5432/postgres`
+1. Connection string is `postgresql://USER:PASSWORD@HOST:PORT/DATABASE`. 
+3. Replace `USER`, `PASSWORD` and `DATABASE`. 
+4. End result should be: `postgresql://postgres:postgres@localhost:5432/PropelDemoDb`
 5. Go back to project settings and find `keystone.js` file and modify connection string
 
 ```
