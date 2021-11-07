@@ -55,6 +55,3 @@ db: {
 
 3. Create first post.     
 ![Screen Shot 2021-11-06 at 11 34 00 am](https://user-images.githubusercontent.com/1040210/140591712-0b166ff8-a48b-4f7b-9ff8-02f366fe1256.png)
-
-4. Go and check database in https://supabase.io/
-![Screen Shot 2021-11-06 at 11 38 33 am](https://user-images.githubusercontent.com/1040210/140591866-85336ed5-814e-49e8-8e14-034c31ee2de6.png)
