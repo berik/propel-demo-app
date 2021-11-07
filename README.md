@@ -1,9 +1,9 @@
 # Project
 
 ## Some prerequisite
-1. Setup account in https://supabase.io/
-2. Knowledge of Reactjs, GraphQL
-3. Installed VS code
+1. Setup account in https://www.heroku.com/
+2. Knowledge of Reactjs and little bit of GraphQL
+3. Installed VSCode, yarn
 
 ## Structure of this demo
 1. Build backend API with Headless CMS (keystonejs)
