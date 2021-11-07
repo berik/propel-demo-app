@@ -20,7 +20,7 @@ export default withAuth(
     // the db sets the database provider - we're using sqlite for the fastest startup experience
     db: {
       provider: 'postgresql',
-      url: 'postgresql://postgres:PropelDemoAppDb@db.akerbvropljqboyamhou.supabase.co:5432/postgres',
+      url: 'postgresql://postgres:postgres@localhost:5432/PropelDemoDb',
       onConnect: async context => { /* ... */ },
       // Optional advanced configuration
       enableLogging: true,
