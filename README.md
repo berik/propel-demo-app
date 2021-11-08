@@ -20,7 +20,6 @@ Give name to project.
 ```
 propel-demo-app
 ```
-![Screen Shot 2021-11-06 at 10 06 35 am](https://user-images.githubusercontent.com/1040210/140590810-9324c0a7-3bca-4ac0-b601-38360f0f6ee4.png)
 
 Run
 ```
