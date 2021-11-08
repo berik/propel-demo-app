@@ -13,7 +13,7 @@
 
 Run in terminal
 ```
-npx create-keystone-app
+yarn create keystone-app
 ```
 
 Give name to project.
