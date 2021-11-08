@@ -26,7 +26,7 @@ Run
 cd propel-demo-app && code .
 ```
 
-## Upgrade DB settings to postgresql
+## Upgrade DB settings to postgresql && CORS
 1. Connection string is `postgresql://USER:PASSWORD@HOST:PORT/DATABASE`. 
 3. Replace `USER`, `PASSWORD` and `DATABASE`. 
 4. End result should be: `postgresql://postgres:postgres@localhost:5432/PropelDemoDb`
@@ -41,6 +41,9 @@ db: {
     enableLogging: true,
     useMigrations: true,
     idField: { kind: 'uuid' },
+  },
+  server:{
+      cors: { origin: ['http://localhost:4000'], credentials: true },
   },
 ```
 6. Run `npm run dev` or `yarn dev`
